@@ -1,8 +1,0 @@
-﻿
-@{
-    ViewBag.Title = "Index";
-}
-
-<h2>Index</h2>
-<p>Create project <input type="text" /><input type="submit" value="Search" /></p>
-<p>List all projects with kendo grid</p>
