@@ -1,0 +1,111 @@
+﻿@model GoblinFreelancer.Models.ApplicationUser
+
+<h2>@Model.UserName</h2>
+
+<div>
+    @using (Html.BeginForm("update", "Users", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        @Html.HiddenFor(model => model.Id);
+
+        <table>
+            <tfoot>
+                <tr>
+                    <td colspan="2">
+                        <input type="submit" value="Submit" />
+                    </td>
+                </tr>
+            </tfoot>
+            <tbody>
+                <tr>
+                    <td>@Html.LabelFor(x => x.Email)</td>
+                    <td>@Html.EditorFor(x => x.Email)</td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(x => x.Skills)</td>
+                    <td>
+
+                        @(Html.Kendo()
+                        .AutoComplete()
+                        .Name("user-skill-input")
+                        .DataTextField("Name")
+                        .MinLength(1)
+                        .Placeholder("Select Skill")
+                        .DataSource(data =>
+                        {
+                            data.Read(read =>
+                            {
+                                read.Action("AvailableSkills", "Users")
+                                .Data("onAdditionalData");
+                            }).ServerFiltering(true);
+                        }))
+                        <button id="add-skill-btn">Add Skill</button>
+                        <span id="skill-panel" style="height:25px;"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(x => x.ProfilePicture)</td>
+                    <td><input id="picture" type="file" name="picture" /></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><img src="data:image/jpeg;base64,@(Convert.ToBase64String(Model.ProfilePicture))" /></td>
+                </tr>
+            </tbody>
+        </table>
+    }
+</div>
+<script>
+    function onAdditionalData() {
+        return {
+            text: $('#user-skill-input').val(),
+        }
+    }
+
+    $('#add-skill-btn').on('click', function (evt) {
+        evt.preventDefault();
+        $.post('/users/addskill', 'name=' + $('#user-skill-input').val())
+            .then(function (s) {
+                $('#skill-panel').empty()
+                var el = $('<span></span>');
+                el.text(s).appendTo($('#skill-panel'));
+                el.fadeOut(2000, function () {
+                    $('#skill-panel').empty();
+                });
+
+            }, function (e) {
+                $('#skill-panel').empty()
+                var el = $('<span></span>');
+                el.text(e).appendTo($('#skill-panel'));
+                el.fadeOut(2000, function () {
+                    $('#skill-panel').empty();
+                });
+            });
+    });
+
+    //document.getElementById('#skill-id').addEventListener('onchange', function () {
+    //    $('#add-skill-btn').enabled = true;
+    //    console.log(1);
+    //});
+</script>
+@*<div>
+        <p>Email: @Model.Email</p>
+        <div>
+            Roles:
+            @foreach (var role in Model.Roles)
+            {
+                <span>@role.Role.Name</span>
+            }
+
+        </div>
+        <div>
+            Skills:
+            @foreach (var skill in Model.Skills)
+            {
+                <span>@skill.Name</span>
+            }
+            @if (User.Identity.Name == Model.UserName)
+            {
+                <p><input type="text" /><input type="submit" value="Add" /></p>
+            }
+        </div>
+        <p>Rating: @(Model.Rating/Model.TimesRated)</p>
+    </div>*@

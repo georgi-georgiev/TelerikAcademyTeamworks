@@ -1,0 +1,114 @@
+﻿body {
+    padding-top: 60px;
+    padding-bottom: 40px;
+}
+
+/* styles for validation helpers */
+.field-validation-error {
+    color: #b94a48;
+}
+
+.field-validation-valid {
+    display: none;
+ }
+
+input.input-validation-error {
+    border: 1px solid #b94a48;
+}
+
+input[type="checkbox"].input-validation-error {
+    border: 0 none;
+}
+
+.validation-summary-errors {
+    color: #b94a48;
+}
+
+.validation-summary-valid {
+    display: none;
+}
+
+/* styles for removing the background from form */
+.no-color {
+  background-color: white;
+  border-style:none;
+}
+
+.user-item strong {
+    color: #7c7c7c;
+}
+
+.edit-btn {
+    background-image: url('../img/pencil.png');
+    background-size: 12px;
+    background-repeat: no-repeat;
+    background-position: 5px 4px;
+    font-size:12pt;
+    font-weight: normal;
+    color: #57B8ED;
+}
+    .edit-btn a {
+        padding-left: 20px;
+    }
+.profile-page-username:hover {
+    background:#EAF5FF;
+}
+
+.hire-me-btn {
+    display:inline-block;
+    margin-top: 10px;
+    padding: 5px;
+    text-align: center;
+    background: #B4DFF1;
+    width: 190px;
+    border:1px solid #57B8ED;
+}
+
+    .hire-me-btn strong {
+        color:white;
+    }
+
+    .hire-me-btn:hover {
+        background: #d9f1fe;
+    }
+
+        .hire-me-btn:hover strong {
+            color: #555555;
+        }
+
+#skill-list {
+    padding:10px;
+}
+.skill-item {
+    cursor:default;margin-bottom: 5px;padding-right: 5px; padding-left: 5px;display:inline-block; 
+    height:40px;
+    vertical-align:top;
+    margin-bottom:10px;
+    
+}
+
+    .skill-item a {
+        display:none;color:white;background-color:teal;padding:2px;
+        margin-top:5px;
+        height:15px;
+        line-height:15px;
+        text-align:center;
+        text-decoration:none;
+    }
+
+#skill-list #selected-skill {
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    font-size:16px;
+    line-height:normal;
+}
+
+    #skill-list #selected-skill a {
+        display:block;
+        font-size:10px;
+    }
+
+.span5 {
+    overflow:auto;
+    margin-bottom:20px;
+}

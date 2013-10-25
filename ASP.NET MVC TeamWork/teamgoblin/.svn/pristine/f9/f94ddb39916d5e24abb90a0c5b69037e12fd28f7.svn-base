@@ -1,0 +1,31 @@
+﻿@model GoblinFreelancer.Models.Project
+
+@{
+    ViewBag.Title = "ViewProject";
+}
+
+<h2>ViewProject</h2>
+
+<div>
+    <p>Name: @Html.DisplayFor(m => m.Name)</p>
+    <p>Owner: @Html.DisplayFor(m => m.Owner.UserName)</p>
+    <p>Salary: @Html.DisplayFor(m => m.Salary)</p>
+    <p>Summary: @Html.DisplayFor(m => m.Summary)</p>
+    <p>CreatedOn: @Html.DisplayFor(m => m.CreatedOn)</p>
+    <p>Deadline: @Html.DisplayFor(m => m.Deadline)</p>
+    <p>Category: @Html.DisplayFor(m => m.Category.Name)</p>
+    <p>
+        Collaborators:
+        @foreach (var collaborator in Model.Collaborators)
+        {
+            <a href="~/Users/ByUser/@collaborator.UserName"><span>@collaborator.UserName</span></a>
+        }
+    </p>
+    <p>
+        Skills:
+        @foreach (var skill in Model.Skills)
+        {
+            <span>@skill.Name</span>
+        }
+    </p>
+</div>
