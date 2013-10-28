@@ -1,0 +1,35 @@
+﻿<ul data-template="ul-template" data-bind="source: products">
+</ul>
+<script id="ul-template" type="text/x-kendo-template">
+    <li>
+        <ul>
+            <li>
+                <strong>id: </strong><span id="productId" data-bind="text: productId"></span>
+            </li>
+            <li>
+                <strong>name: </strong><span id="productName" data-bind="text: productName"></span>
+            </li>
+            <li>
+                <strong>Category: </strong><span id="category" data-bind="text: category"></span>
+            </li>
+            <li>
+                <strong>Date of creation: </strong><span id="productId" data-bind="text: dateOfCreation"></span>
+            </li>
+            <li>
+                <strong>Description: </strong><span id="productId" data-bind="text: description"></span>
+            </li>
+            <li>
+                <strong>Manufacturer: </strong><span id="productId" data-bind="text: manufacturer"></span>
+            </li>
+            <li>
+                <strong>Price: </strong><span id="productId" data-bind="text: price"></span>
+            </li>
+             <li>
+                <strong>Quantity: </strong><span id="productId" data-bind="text: quantity"></span>
+            </li>
+            <li>
+                <button data-bind="click: buy">Buy</button>
+            </li>
+        </ul>
+    </li>
+</script>

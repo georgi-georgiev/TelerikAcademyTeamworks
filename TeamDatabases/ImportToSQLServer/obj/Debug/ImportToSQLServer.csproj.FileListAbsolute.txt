@@ -1,0 +1,1 @@
+C:\Users\Georgi\Desktop\TeamworkDB\Vesper\DB-teamwork\ImportToSQLServer\bin\Debug\ImportToSQLServer.exe.config

@@ -1,0 +1,9 @@
+﻿<h1>Products</h1>
+<ul data-template="product-template" data-bind="source: products">
+</ul>
+
+<script type="text/x-kendo-template" id="product-template">
+    <li>
+        <span data-bind="text: productName"></span>
+    </li>
+</script>

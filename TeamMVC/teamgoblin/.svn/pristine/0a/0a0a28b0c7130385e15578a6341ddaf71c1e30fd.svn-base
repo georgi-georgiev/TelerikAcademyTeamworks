@@ -1,0 +1,43 @@
+﻿@using GoblinFreelancer.Models.ViewModels;
+@{
+    ViewBag.Title = "Users";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<ul style="width:400px">
+    @(Html.Kendo().ListView<UserViewModel>()
+    .Name("listView")
+    .TagName("div")
+    .ClientTemplateId("users-template")
+    .DataSource(data =>
+    {
+        data.Read(read => read.Action("GetUsers", "Users"));
+        data.PageSize(10);
+    })
+    .Pageable()
+    )
+</ul>
+
+
+<script type="text/x-kendo-template" id="users-template">
+    <li class="user" style="list-style-type:none; padding:10px;">
+        <div class="user-item" style="border:1px solid black;padding: 5px;height:100px">
+            <div style="width: 100px;border:1px solid gray;height: 100px; background-image: url('/Users/GetImage?id=#:Id#');background-size:100px 100px; float: left"></div>
+            <span style="display:inline-block;margin-left:5px">
+                <span>
+                    <strong> Username:</strong>
+                    <a href="\Users/UserProfile?username=#:UserName#">#:UserName# </a>
+                </span>
+                <br />
+                <span>
+                    <strong> Rating:</strong> #:Rating#
+                </span>
+                <br />
+                <span>
+                    <strong> Skills:</strong> #:Skills#
+                </span>
+            </span>
+        </div>
+    </li>
+</script>

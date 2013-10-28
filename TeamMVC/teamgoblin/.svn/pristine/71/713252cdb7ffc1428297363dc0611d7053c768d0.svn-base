@@ -1,0 +1,77 @@
+﻿body {
+    padding-top: 60px;
+    padding-bottom: 40px;
+}
+
+/* styles for validation helpers */
+.field-validation-error {
+    color: #b94a48;
+}
+
+.field-validation-valid {
+    display: none;
+ }
+
+input.input-validation-error {
+    border: 1px solid #b94a48;
+}
+
+input[type="checkbox"].input-validation-error {
+    border: 0 none;
+}
+
+.validation-summary-errors {
+    color: #b94a48;
+}
+
+.validation-summary-valid {
+    display: none;
+}
+
+/* styles for removing the background from form */
+.no-color {
+  background-color: white;
+  border-style:none;
+}
+
+.user-item strong {
+    color: #7c7c7c;
+}
+
+.edit-btn {
+    background-image: url('../img/pencil.png');
+    background-size: 12px;
+    background-repeat: no-repeat;
+    background-position: 5px 4px;
+    font-size:12pt;
+    font-weight: normal;
+    color: #57B8ED;
+}
+    .edit-btn a {
+        padding-left: 20px;
+    }
+.profile-page-username:hover {
+    background:#EAF5FF;
+}
+
+.hire-me-btn {
+    display:inline-block;
+    margin-top: 10px;
+    padding: 5px;
+    text-align: center;
+    background: #B4DFF1;
+    width: 190px;
+    border:1px solid #57B8ED;
+}
+
+    .hire-me-btn strong {
+        color:white;
+    }
+
+    .hire-me-btn:hover {
+        background: #d9f1fe;
+    }
+
+        .hire-me-btn:hover strong {
+            color: #555555;
+        }

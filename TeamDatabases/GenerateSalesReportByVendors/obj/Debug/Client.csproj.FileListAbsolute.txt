@@ -1,0 +1,8 @@
+C:\Users\Georgi\Desktop\TeamworkDB\Vesper\DB-teamwork\GenerateSalesReportByVendors\bin\Debug\GenerateSalesReportByVendors.exe.config
+C:\Users\Georgi\Desktop\TeamworkDB\Vesper\DB-teamwork\GenerateSalesReportByVendors\bin\Debug\GenerateSalesReportByVendors.exe
+C:\Users\Georgi\Desktop\TeamworkDB\Vesper\DB-teamwork\GenerateSalesReportByVendors\bin\Debug\GenerateSalesReportByVendors.pdb
+C:\Users\Georgi\Desktop\TeamworkDB\Vesper\DB-teamwork\GenerateSalesReportByVendors\bin\Debug\GenerateSalesReportXML.dll
+C:\Users\Georgi\Desktop\TeamworkDB\Vesper\DB-teamwork\GenerateSalesReportByVendors\bin\Debug\GenerateSalesReportXML.pdb
+C:\Users\Georgi\Desktop\TeamworkDB\Vesper\DB-teamwork\GenerateSalesReportByVendors\obj\Debug\Client.csprojResolveAssemblyReference.cache
+C:\Users\Georgi\Desktop\TeamworkDB\Vesper\DB-teamwork\GenerateSalesReportByVendors\obj\Debug\GenerateSalesReportByVendors.exe
+C:\Users\Georgi\Desktop\TeamworkDB\Vesper\DB-teamwork\GenerateSalesReportByVendors\obj\Debug\GenerateSalesReportByVendors.pdb

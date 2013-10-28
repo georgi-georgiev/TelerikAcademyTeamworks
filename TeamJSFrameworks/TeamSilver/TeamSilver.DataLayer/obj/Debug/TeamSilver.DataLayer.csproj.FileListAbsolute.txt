@@ -1,0 +1,20 @@
+C:\Users\Georgi\Documents\Visual Studio 2012\Projects\TeamSilver\TeamSilver.DataLayer\bin\Debug\TeamSilver.DataLayer.dll.config
+C:\Users\Georgi\Documents\Visual Studio 2012\Projects\TeamSilver\TeamSilver.DataLayer\bin\Debug\TeamSilver.DataLayer.dll
+C:\Users\Georgi\Documents\Visual Studio 2012\Projects\TeamSilver\TeamSilver.DataLayer\bin\Debug\TeamSilver.DataLayer.pdb
+C:\Users\Georgi\Documents\Visual Studio 2012\Projects\TeamSilver\TeamSilver.DataLayer\bin\Debug\EntityFramework.dll
+C:\Users\Georgi\Documents\Visual Studio 2012\Projects\TeamSilver\TeamSilver.DataLayer\bin\Debug\TeamSilver.Models.dll
+C:\Users\Georgi\Documents\Visual Studio 2012\Projects\TeamSilver\TeamSilver.DataLayer\bin\Debug\TeamSilver.Models.pdb
+C:\Users\Georgi\Documents\Visual Studio 2012\Projects\TeamSilver\TeamSilver.DataLayer\bin\Debug\EntityFramework.xml
+C:\Users\Georgi\Documents\Visual Studio 2012\Projects\TeamSilver\TeamSilver.DataLayer\obj\Debug\TeamSilver.DataLayer.csprojResolveAssemblyReference.cache
+C:\Users\Georgi\Documents\Visual Studio 2012\Projects\TeamSilver\TeamSilver.DataLayer\obj\Debug\TeamSilver.DataLayer.dll
+C:\Users\Georgi\Documents\Visual Studio 2012\Projects\TeamSilver\TeamSilver.DataLayer\obj\Debug\TeamSilver.DataLayer.pdb
+D:\Telerik\Teamworks\TeamSilver\TeamSilver\TeamSilver.DataLayer\bin\Debug\TeamSilver.DataLayer.dll.config
+D:\Telerik\Teamworks\TeamSilver\TeamSilver\TeamSilver.DataLayer\bin\Debug\TeamSilver.DataLayer.dll
+D:\Telerik\Teamworks\TeamSilver\TeamSilver\TeamSilver.DataLayer\bin\Debug\TeamSilver.DataLayer.pdb
+D:\Telerik\Teamworks\TeamSilver\TeamSilver\TeamSilver.DataLayer\bin\Debug\EntityFramework.dll
+D:\Telerik\Teamworks\TeamSilver\TeamSilver\TeamSilver.DataLayer\bin\Debug\TeamSilver.Models.dll
+D:\Telerik\Teamworks\TeamSilver\TeamSilver\TeamSilver.DataLayer\bin\Debug\TeamSilver.Models.pdb
+D:\Telerik\Teamworks\TeamSilver\TeamSilver\TeamSilver.DataLayer\bin\Debug\EntityFramework.xml
+D:\Telerik\Teamworks\TeamSilver\TeamSilver\TeamSilver.DataLayer\obj\Debug\TeamSilver.DataLayer.csprojResolveAssemblyReference.cache
+D:\Telerik\Teamworks\TeamSilver\TeamSilver\TeamSilver.DataLayer\obj\Debug\TeamSilver.DataLayer.dll
+D:\Telerik\Teamworks\TeamSilver\TeamSilver\TeamSilver.DataLayer\obj\Debug\TeamSilver.DataLayer.pdb

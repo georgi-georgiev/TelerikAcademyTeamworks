@@ -1,0 +1,10 @@
+C:\Users\Georgi\Documents\Visual Studio 2012\Projects\TeamSilver\TeamSilver.Models\bin\Debug\TeamSilver.Models.dll
+C:\Users\Georgi\Documents\Visual Studio 2012\Projects\TeamSilver\TeamSilver.Models\bin\Debug\TeamSilver.Models.pdb
+C:\Users\Georgi\Documents\Visual Studio 2012\Projects\TeamSilver\TeamSilver.Models\obj\Debug\TeamSilver.Models.csprojResolveAssemblyReference.cache
+C:\Users\Georgi\Documents\Visual Studio 2012\Projects\TeamSilver\TeamSilver.Models\obj\Debug\TeamSilver.Models.dll
+C:\Users\Georgi\Documents\Visual Studio 2012\Projects\TeamSilver\TeamSilver.Models\obj\Debug\TeamSilver.Models.pdb
+D:\Telerik\Teamworks\TeamSilver\TeamSilver\TeamSilver.Models\bin\Debug\TeamSilver.Models.dll
+D:\Telerik\Teamworks\TeamSilver\TeamSilver\TeamSilver.Models\bin\Debug\TeamSilver.Models.pdb
+D:\Telerik\Teamworks\TeamSilver\TeamSilver\TeamSilver.Models\obj\Debug\TeamSilver.Models.csprojResolveAssemblyReference.cache
+D:\Telerik\Teamworks\TeamSilver\TeamSilver\TeamSilver.Models\obj\Debug\TeamSilver.Models.dll
+D:\Telerik\Teamworks\TeamSilver\TeamSilver\TeamSilver.Models\obj\Debug\TeamSilver.Models.pdb

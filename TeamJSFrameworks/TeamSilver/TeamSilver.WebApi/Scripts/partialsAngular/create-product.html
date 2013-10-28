@@ -1,0 +1,25 @@
+﻿<fieldset>
+	<legend>Create a product</legend>
+	<label for="tb-price">Price:</label>
+	<input type="text" id="tb-price" ng-model="newProduct.price" />
+	<br />
+	<label for="tb-category">Category:</label>
+	<input type="text" id="tb-category" ng-model="newProduct.category" />
+	<br />
+	<label for="tb-dateOfCreation">Date of creation:</label>
+	<input type="text" id="tb-dateOfCreation" ng-model="newProduct.dateOfCreation" />
+	<br />
+    <label for="tb-description">Description:</label>
+	<input type="text" id="tb-description" ng-model="newProduct.description" />
+	<br />
+    <label for="tb-manufacturer">Manufacturer:</label>
+	<input type="text" id="tb-manufacturer" ng-model="newProduct.manufacturer" />
+	<br />
+    <label for="tb-productName">ProductName:</label>
+	<input type="text" id="tb-productName" ng-model="newProduct.productName" />
+	<br />
+    <label for="tb-quantity">Quantity:</label>
+	<input type="text" id="tb-quantity" ng-model="newProduct.quantity" />
+	<br />
+	<button ng-click="addProduct()">Add New</button>
+</fieldset>

@@ -1,0 +1,130 @@
+﻿using GoblinFreelancer.Repository;
+using GoblinFreelancer.ViewModels;
+using Kendo.Mvc.UI;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.Mvc;
+using Kendo.Mvc.Extensions;
+using GoblinFreelancer.Models;
+using Microsoft.AspNet.Identity.EntityFramework;
+
+namespace GoblinFreelancer.Controllers
+{
+    public class ProjectsController : Controller
+    {
+        IUowData db;
+
+        public ProjectsController(IUowData db)
+        {
+            this.db = db;
+        }
+
+        public ProjectsController()
+        {
+            db = new UowData();
+        }
+        //
+        // GET: /Projects/
+        public ActionResult Index()
+        {
+            return View();
+        }
+
+        public JsonResult ReadProjects([DataSourceRequest]DataSourceRequest request)
+        {
+            var projects = db.Projects.All().ToList().Select(ProjectViewModelFull.FromProject);
+            return Json(projects.ToDataSourceResult(request), JsonRequestBehavior.AllowGet);
+        }
+
+        public JsonResult ReadProjectsCategory([DataSourceRequest]DataSourceRequest request, string category)
+        {
+            var projects = db.Projects.All().Where(p => p.Category.Name == category).ToList().Select(ProjectViewModelFull.FromProject);
+            return Json(projects.ToDataSourceResult(request), JsonRequestBehavior.AllowGet);
+        }
+
+        public ActionResult ReadProjectsSearch([DataSourceRequest]DataSourceRequest request, string query)
+        {
+            
+            if (String.IsNullOrEmpty(query))
+            {
+                var projects = db.Projects.All().Select(ProjectViewModelFull.FromProject);
+                return Json(projects.ToDataSourceResult(request), JsonRequestBehavior.AllowGet);
+            }
+            else
+            {
+                if (query.Length >= 50)
+                {
+                    return View("Error");
+                }
+                var projects = db.Projects.All().Where(p => p.Name.Contains(query)).ToList().Select(ProjectViewModelFull.FromProject);
+                return Json(projects.ToDataSourceResult(request), JsonRequestBehavior.AllowGet);
+            }
+        }
+
+        public ActionResult Search(string query)
+        {
+            ViewBag.Query = query;
+            return View();
+        }
+
+        [Authorize]
+        public ActionResult CreateProject()
+        {
+            ViewBag.Categories = db.Categories.All().ToList().Select(x => new SelectListItem { Text = x.Name, Value = x.Id.ToString() });
+
+            return PartialView("_CreateProjectForm");
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [Authorize]
+        public ActionResult CreateProject(Project project)
+        {
+            var userHireRole = db.Users.All().FirstOrDefault(u => u.UserName == User.Identity.Name).Roles.FirstOrDefault(r => r.Role.Name == "Hire");
+            if (userHireRole != null)
+            {
+                if (!ModelState.IsValid)
+                {
+                    ViewBag.Categories = db.Categories.All().ToList().Select(x => new SelectListItem { Text = x.Name, Value = x.Id.ToString() });
+                    return PartialView("_CreateProjectForm", project);
+                }
+
+                project.Owner = db.Users.All().FirstOrDefault(u => u.UserName == User.Identity.Name);
+                project.Category = db.Categories.All().FirstOrDefault(c => c.Id == project.Category.Id);
+                project.CreatedOn = DateTime.Now;
+                project.Deadline = DateTime.Now;
+                db.Projects.Add(project);
+                db.SaveChanges();
+                return null;
+            }
+            else
+            {
+                ModelState.AddModelError("User role", "You are not hire");
+                ViewBag.Categories = db.Categories.All().ToList().Select(x => new SelectListItem { Text = x.Name, Value = x.Id.ToString() });
+                return PartialView("_CreateProjectForm", project);
+            }
+        }
+
+        public ActionResult ViewProject(int? id)
+        {
+            if(id == null)
+            {
+                return View("Error");
+            }
+            else
+            {
+                var project = db.Projects.GetById(Convert.ToInt32(id));
+                return View(project);
+            }
+            
+        }
+
+        public JsonResult GetProjectsNames(string text)
+        {
+            var projects = db.Projects.All().Where(p => p.Name.ToLower().Contains(text.ToLower())).Select(ProjectViewModelShort.FromProject);
+            return Json(projects, JsonRequestBehavior.AllowGet);
+        }
+	}
+}

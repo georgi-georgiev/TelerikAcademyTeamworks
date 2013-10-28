@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0">
+    <siteMapNode title="Home" description="Home Page" url="~/Default.aspx">
+      <siteMapNode title="About" description="About Page" url="~/About.aspx"></siteMapNode>
+      <siteMapNode title="Contact" description="Contact Page" url="~/Contact.aspx"></siteMapNode>
+      <siteMapNode title="AllUsers" description="AllUsers Page" url="~/AllUsers.aspx"></siteMapNode>
+      <siteMapNode title="Profile" description="Profile Page" url="~/Profile.aspx"></siteMapNode>
+      <siteMapNode title="Groups" description="Groups Page" url="~/Groups.aspx"></siteMapNode>
+      <siteMapNode title="Admin Groups Edit" description="Admin Group Edit Page" url="~/Admin/GroupEdit.aspx"></siteMapNode>
+      <siteMapNode title="Admin Skill Edit" description="Admin Skill Edit Page" url="~/Admin/SkillEdit.aspx"></siteMapNode>
+    </siteMapNode>
+</siteMap>

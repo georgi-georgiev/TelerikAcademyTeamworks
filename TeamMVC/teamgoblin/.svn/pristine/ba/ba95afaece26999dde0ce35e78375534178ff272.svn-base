@@ -1,0 +1,30 @@
+﻿@model GoblinFreelancer.Models.ApplicationUser
+
+@{
+    ViewBag.Title = "ByUser";
+}
+
+<h2>@Model.UserName</h2>
+<div>
+    <p>Email: @Model.Email</p>
+    <div>
+        Roles:
+        @foreach (var role in Model.Roles)
+        {
+            <span>@role.Role.Name</span>
+        }
+        
+    </div>
+    <div>
+        Skills:
+        @foreach (var skill in Model.Skills)
+        {
+            <span>@skill.Name</span>
+        }
+        @if (User.Identity.Name == Model.UserName)
+        {
+            <p><input type="text" /><input type="submit" value="Add" /></p>
+        }
+    </div>
+    <p>Rating: @(Model.Rating/Model.TimesRated)</p>
+</div>

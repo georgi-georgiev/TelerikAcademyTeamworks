@@ -1,0 +1,73 @@
+C:\Users\Georgi\Documents\Visual Studio 2012\Projects\TeamSilver\TeamSilver.WebApi\bin\TeamSilver.WebApi.dll
+C:\Users\Georgi\Documents\Visual Studio 2012\Projects\TeamSilver\TeamSilver.WebApi\bin\TeamSilver.WebApi.pdb
+C:\Users\Georgi\Documents\Visual Studio 2012\Projects\TeamSilver\TeamSilver.WebApi\bin\Antlr3.Runtime.dll
+C:\Users\Georgi\Documents\Visual Studio 2012\Projects\TeamSilver\TeamSilver.WebApi\bin\EntityFramework.dll
+C:\Users\Georgi\Documents\Visual Studio 2012\Projects\TeamSilver\TeamSilver.WebApi\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Georgi\Documents\Visual Studio 2012\Projects\TeamSilver\TeamSilver.WebApi\bin\Newtonsoft.Json.dll
+C:\Users\Georgi\Documents\Visual Studio 2012\Projects\TeamSilver\TeamSilver.WebApi\bin\System.Net.Http.Formatting.dll
+C:\Users\Georgi\Documents\Visual Studio 2012\Projects\TeamSilver\TeamSilver.WebApi\bin\System.Web.Helpers.dll
+C:\Users\Georgi\Documents\Visual Studio 2012\Projects\TeamSilver\TeamSilver.WebApi\bin\System.Web.Http.dll
+C:\Users\Georgi\Documents\Visual Studio 2012\Projects\TeamSilver\TeamSilver.WebApi\bin\System.Web.Http.WebHost.dll
+C:\Users\Georgi\Documents\Visual Studio 2012\Projects\TeamSilver\TeamSilver.WebApi\bin\System.Web.Mvc.dll
+C:\Users\Georgi\Documents\Visual Studio 2012\Projects\TeamSilver\TeamSilver.WebApi\bin\System.Web.Optimization.dll
+C:\Users\Georgi\Documents\Visual Studio 2012\Projects\TeamSilver\TeamSilver.WebApi\bin\System.Web.Providers.dll
+C:\Users\Georgi\Documents\Visual Studio 2012\Projects\TeamSilver\TeamSilver.WebApi\bin\System.Web.Razor.dll
+C:\Users\Georgi\Documents\Visual Studio 2012\Projects\TeamSilver\TeamSilver.WebApi\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Georgi\Documents\Visual Studio 2012\Projects\TeamSilver\TeamSilver.WebApi\bin\System.Web.WebPages.dll
+C:\Users\Georgi\Documents\Visual Studio 2012\Projects\TeamSilver\TeamSilver.WebApi\bin\System.Web.WebPages.Razor.dll
+C:\Users\Georgi\Documents\Visual Studio 2012\Projects\TeamSilver\TeamSilver.WebApi\bin\TeamSilver.DataLayer.dll
+C:\Users\Georgi\Documents\Visual Studio 2012\Projects\TeamSilver\TeamSilver.WebApi\bin\TeamSilver.Models.dll
+C:\Users\Georgi\Documents\Visual Studio 2012\Projects\TeamSilver\TeamSilver.WebApi\bin\WebGrease.dll
+C:\Users\Georgi\Documents\Visual Studio 2012\Projects\TeamSilver\TeamSilver.WebApi\bin\TeamSilver.DataLayer.pdb
+C:\Users\Georgi\Documents\Visual Studio 2012\Projects\TeamSilver\TeamSilver.WebApi\bin\TeamSilver.Models.pdb
+C:\Users\Georgi\Documents\Visual Studio 2012\Projects\TeamSilver\TeamSilver.WebApi\bin\EntityFramework.xml
+C:\Users\Georgi\Documents\Visual Studio 2012\Projects\TeamSilver\TeamSilver.WebApi\bin\Newtonsoft.Json.xml
+C:\Users\Georgi\Documents\Visual Studio 2012\Projects\TeamSilver\TeamSilver.WebApi\bin\System.Net.Http.Formatting.xml
+C:\Users\Georgi\Documents\Visual Studio 2012\Projects\TeamSilver\TeamSilver.WebApi\bin\System.Web.Helpers.xml
+C:\Users\Georgi\Documents\Visual Studio 2012\Projects\TeamSilver\TeamSilver.WebApi\bin\System.Web.Http.xml
+C:\Users\Georgi\Documents\Visual Studio 2012\Projects\TeamSilver\TeamSilver.WebApi\bin\System.Web.Http.WebHost.xml
+C:\Users\Georgi\Documents\Visual Studio 2012\Projects\TeamSilver\TeamSilver.WebApi\bin\System.Web.Mvc.xml
+C:\Users\Georgi\Documents\Visual Studio 2012\Projects\TeamSilver\TeamSilver.WebApi\bin\System.Web.Razor.xml
+C:\Users\Georgi\Documents\Visual Studio 2012\Projects\TeamSilver\TeamSilver.WebApi\bin\System.Web.WebPages.xml
+C:\Users\Georgi\Documents\Visual Studio 2012\Projects\TeamSilver\TeamSilver.WebApi\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Georgi\Documents\Visual Studio 2012\Projects\TeamSilver\TeamSilver.WebApi\bin\System.Web.WebPages.Razor.xml
+C:\Users\Georgi\Documents\Visual Studio 2012\Projects\TeamSilver\TeamSilver.WebApi\obj\Debug\TeamSilver.WebApi.csprojResolveAssemblyReference.cache
+C:\Users\Georgi\Documents\Visual Studio 2012\Projects\TeamSilver\TeamSilver.WebApi\obj\Debug\TeamSilver.WebApi.dll
+C:\Users\Georgi\Documents\Visual Studio 2012\Projects\TeamSilver\TeamSilver.WebApi\obj\Debug\TeamSilver.WebApi.pdb
+D:\Telerik\Teamworks\TeamSilver\TeamSilver\TeamSilver.WebApi\bin\TeamSilver.WebApi.dll.config
+D:\Telerik\Teamworks\TeamSilver\TeamSilver\TeamSilver.WebApi\bin\TeamSilver.WebApi.dll
+D:\Telerik\Teamworks\TeamSilver\TeamSilver\TeamSilver.WebApi\bin\TeamSilver.WebApi.pdb
+D:\Telerik\Teamworks\TeamSilver\TeamSilver\TeamSilver.WebApi\bin\Antlr3.Runtime.dll
+D:\Telerik\Teamworks\TeamSilver\TeamSilver\TeamSilver.WebApi\bin\EntityFramework.dll
+D:\Telerik\Teamworks\TeamSilver\TeamSilver\TeamSilver.WebApi\bin\Microsoft.Web.Infrastructure.dll
+D:\Telerik\Teamworks\TeamSilver\TeamSilver\TeamSilver.WebApi\bin\Newtonsoft.Json.dll
+D:\Telerik\Teamworks\TeamSilver\TeamSilver\TeamSilver.WebApi\bin\System.Net.Http.Formatting.dll
+D:\Telerik\Teamworks\TeamSilver\TeamSilver\TeamSilver.WebApi\bin\System.Web.Helpers.dll
+D:\Telerik\Teamworks\TeamSilver\TeamSilver\TeamSilver.WebApi\bin\System.Web.Http.dll
+D:\Telerik\Teamworks\TeamSilver\TeamSilver\TeamSilver.WebApi\bin\System.Web.Http.WebHost.dll
+D:\Telerik\Teamworks\TeamSilver\TeamSilver\TeamSilver.WebApi\bin\System.Web.Mvc.dll
+D:\Telerik\Teamworks\TeamSilver\TeamSilver\TeamSilver.WebApi\bin\System.Web.Optimization.dll
+D:\Telerik\Teamworks\TeamSilver\TeamSilver\TeamSilver.WebApi\bin\System.Web.Providers.dll
+D:\Telerik\Teamworks\TeamSilver\TeamSilver\TeamSilver.WebApi\bin\System.Web.Razor.dll
+D:\Telerik\Teamworks\TeamSilver\TeamSilver\TeamSilver.WebApi\bin\System.Web.WebPages.Deployment.dll
+D:\Telerik\Teamworks\TeamSilver\TeamSilver\TeamSilver.WebApi\bin\System.Web.WebPages.dll
+D:\Telerik\Teamworks\TeamSilver\TeamSilver\TeamSilver.WebApi\bin\System.Web.WebPages.Razor.dll
+D:\Telerik\Teamworks\TeamSilver\TeamSilver\TeamSilver.WebApi\bin\TeamSilver.DataLayer.dll
+D:\Telerik\Teamworks\TeamSilver\TeamSilver\TeamSilver.WebApi\bin\TeamSilver.Models.dll
+D:\Telerik\Teamworks\TeamSilver\TeamSilver\TeamSilver.WebApi\bin\WebGrease.dll
+D:\Telerik\Teamworks\TeamSilver\TeamSilver\TeamSilver.WebApi\bin\TeamSilver.DataLayer.pdb
+D:\Telerik\Teamworks\TeamSilver\TeamSilver\TeamSilver.WebApi\bin\TeamSilver.Models.pdb
+D:\Telerik\Teamworks\TeamSilver\TeamSilver\TeamSilver.WebApi\bin\EntityFramework.xml
+D:\Telerik\Teamworks\TeamSilver\TeamSilver\TeamSilver.WebApi\bin\Newtonsoft.Json.xml
+D:\Telerik\Teamworks\TeamSilver\TeamSilver\TeamSilver.WebApi\bin\System.Net.Http.Formatting.xml
+D:\Telerik\Teamworks\TeamSilver\TeamSilver\TeamSilver.WebApi\bin\System.Web.Helpers.xml
+D:\Telerik\Teamworks\TeamSilver\TeamSilver\TeamSilver.WebApi\bin\System.Web.Http.xml
+D:\Telerik\Teamworks\TeamSilver\TeamSilver\TeamSilver.WebApi\bin\System.Web.Http.WebHost.xml
+D:\Telerik\Teamworks\TeamSilver\TeamSilver\TeamSilver.WebApi\bin\System.Web.Mvc.xml
+D:\Telerik\Teamworks\TeamSilver\TeamSilver\TeamSilver.WebApi\bin\System.Web.Razor.xml
+D:\Telerik\Teamworks\TeamSilver\TeamSilver\TeamSilver.WebApi\bin\System.Web.WebPages.xml
+D:\Telerik\Teamworks\TeamSilver\TeamSilver\TeamSilver.WebApi\bin\System.Web.WebPages.Deployment.xml
+D:\Telerik\Teamworks\TeamSilver\TeamSilver\TeamSilver.WebApi\bin\System.Web.WebPages.Razor.xml
+D:\Telerik\Teamworks\TeamSilver\TeamSilver\TeamSilver.WebApi\obj\Debug\TeamSilver.WebApi.csprojResolveAssemblyReference.cache
+D:\Telerik\Teamworks\TeamSilver\TeamSilver\TeamSilver.WebApi\obj\Debug\TeamSilver.WebApi.dll
+D:\Telerik\Teamworks\TeamSilver\TeamSilver\TeamSilver.WebApi\obj\Debug\TeamSilver.WebApi.pdb

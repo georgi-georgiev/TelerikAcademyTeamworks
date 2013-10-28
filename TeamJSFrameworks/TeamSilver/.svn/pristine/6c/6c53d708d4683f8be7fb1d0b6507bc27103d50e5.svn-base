@@ -1,0 +1,91 @@
+﻿window.persisters = (function () {
+
+    var nickname = localStorage.getItem("nickname");
+    var sessionKey = localStorage.getItem("sessionKey");
+
+    var clearUserData = function () {
+        localStorage.removeItem("nickname");
+        localStorage.removeItem("sessionKey");
+        nickname = null;
+        sessionKey = null;
+    };
+
+    var saveUserData = function (userData) {
+        localStorage.setItem("nickname", userData.displayName);
+        localStorage.setItem("sessionKey", userData.sessionKey);
+        nickname = userData.displayName;
+        sessionKey = userData.sessionKey;
+        console.log(localStorage);
+    };
+
+    var DataPersister = Class.create({
+        init: function (apiUrl) {
+            this.apiUrl = apiUrl;
+            this.users = new UsersPersister(apiUrl + "users/");
+            this.products = new ProductsPersister(apiUrl + "products/");
+            this.categories = new CategoriesPersister(apiUrl + "categories/");
+        },
+        isUserLoggedIn: function () {
+            if (nickname !== null && sessionKey !== null) {
+                return true;
+            }
+
+            return false;
+        },
+        getNickname: function () {
+            return nickname;
+        },
+        getSessionKey: function () {
+            return sessionKey;
+        }
+    });
+	var UsersPersister = Class.create({
+		init: function (apiUrl) {
+			this.apiUrl = apiUrl;
+		},
+		login: function (username, password) {
+			var user = {
+				username: username,
+				password: CryptoJS.SHA1(password).toString()
+			};
+			return requester.postJSON(this.apiUrl + "login", user)
+				.then(function (data) {
+				    saveUserData(data);
+					return data;
+				});
+		},
+		register: function (username, password) {
+			var user = {
+				username: username,
+				password: CryptoJS.SHA1(password).toString()
+			};
+			return requester.postJSON(this.apiUrl + "register", user)
+				.then(function (data) {
+				    saveUserData(data);
+				    return data;
+				});
+		},
+		logout: function () {
+			if (!sessionKey) {
+			    alert("you sessionKey is expired");
+			}
+			var headers = {
+				"X-sessionKey": sessionKey
+			};
+			self.clearUserData();
+			return requester.putJSON(this.apiUrl + "logout", headers);
+		}
+	});
+
+	var ProductsPersister = Class.create({
+	});
+
+	var CategoriesPersister = Class.create({
+	});
+
+	return {
+		get: function (apiUrl) {
+			return new DataPersister(apiUrl);
+		}
+	}
+}());

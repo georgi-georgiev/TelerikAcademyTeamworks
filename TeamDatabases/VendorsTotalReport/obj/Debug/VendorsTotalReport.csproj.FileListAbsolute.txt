@@ -1,0 +1,14 @@
+C:\Users\Georgi\Desktop\TeamworkDB\Vesper\DB-teamwork\VendorsTotalReport\bin\Debug\VendorsTotalReport.exe.config
+C:\Users\Georgi\Desktop\TeamworkDB\Vesper\DB-teamwork\VendorsTotalReport\bin\Debug\VendorsTotalReport.exe
+C:\Users\Georgi\Desktop\TeamworkDB\Vesper\DB-teamwork\VendorsTotalReport\bin\Debug\VendorsTotalReport.pdb
+C:\Users\Georgi\Desktop\TeamworkDB\Vesper\DB-teamwork\VendorsTotalReport\bin\Debug\MongoDB.Bson.dll
+C:\Users\Georgi\Desktop\TeamworkDB\Vesper\DB-teamwork\VendorsTotalReport\bin\Debug\MongoDB.Driver.dll
+C:\Users\Georgi\Desktop\TeamworkDB\Vesper\DB-teamwork\VendorsTotalReport\bin\Debug\MongoDB.Bson.xml
+C:\Users\Georgi\Desktop\TeamworkDB\Vesper\DB-teamwork\VendorsTotalReport\bin\Debug\MongoDB.Driver.xml
+C:\Users\Georgi\Desktop\TeamworkDB\Vesper\DB-teamwork\VendorsTotalReport\obj\Debug\VendorsTotalReport.csprojResolveAssemblyReference.cache
+C:\Users\Georgi\Desktop\TeamworkDB\Vesper\DB-teamwork\VendorsTotalReport\obj\Debug\VendorsTotalReport.exe
+C:\Users\Georgi\Desktop\TeamworkDB\Vesper\DB-teamwork\VendorsTotalReport\obj\Debug\VendorsTotalReport.pdb
+C:\Users\Georgi\Desktop\TeamworkDB\Vesper\DB-teamwork\VendorsTotalReport\bin\Debug\x64\SQLite.Interop.dll
+C:\Users\Georgi\Desktop\TeamworkDB\Vesper\DB-teamwork\VendorsTotalReport\bin\Debug\x86\SQLite.Interop.dll
+C:\Users\Georgi\Desktop\TeamworkDB\Vesper\DB-teamwork\VendorsTotalReport\bin\Debug\System.Data.SQLite.dll
+C:\Users\Georgi\Desktop\TeamworkDB\Vesper\DB-teamwork\VendorsTotalReport\bin\Debug\System.Data.SQLite.Linq.dll

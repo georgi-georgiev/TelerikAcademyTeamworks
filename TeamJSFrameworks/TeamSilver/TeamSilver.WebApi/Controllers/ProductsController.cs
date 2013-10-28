@@ -1,0 +1,265 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Net;
+using System.Net.Http;
+using System.Web.Http;
+using System.Web.Http.ValueProviders;
+using TeamSilver.DataLayer;
+using TeamSilver.Models;
+using TeamSilver.WebApi.Models;
+using TeamSilver.WebAPI.Attributes;
+
+namespace TeamSilver.WebApi.Controllers
+{
+    public class ProductsController : BaseApiController
+    {
+        public IQueryable<ProductModel> GetAllProducts(
+            [ValueProvider(typeof(HeaderValueProviderFactory<string>))] string sessionKey)
+        {
+            var context = new StoreContext();
+            using (context)
+            {
+                var user = UsersController.GetUserBySessionKey(sessionKey);
+                if (user == null)
+                {
+                    throw new ArgumentException("There is no user with such sessionKey!");
+                }
+
+                var newProductModel =
+                    (from product in context.Products
+                    select new ProductModel()
+                    {
+                        ProductId = product.ProductId,
+                        ProductsName = product.ProductName,
+                    }).ToList();
+
+                return newProductModel.AsQueryable();
+            }
+        }
+
+        public ProductFullModel GetProductById(
+            [ValueProvider(typeof(HeaderValueProviderFactory<string>))] string sessionKey, int id)
+        {
+            var context = new StoreContext();
+            using (context)
+            {
+                var user = UsersController.GetUserBySessionKey(sessionKey);
+                if (user == null)
+                {
+                    throw new ArgumentException("There is no user with such sessionKey!");
+                }
+
+                var productById = context.Products.FirstOrDefault(p => p.ProductId == id);
+
+                var newProductModel = new ProductFullModel()
+                {
+                    ProductId = productById.ProductId,
+                    Price = productById.Price,
+                    Category = productById.Category.CategoryName,
+                    DateOfCreation = productById.DateOfCreation,
+                    Description = productById.Description,
+                    Manufacturer = productById.Manufacturer,
+                    ProductName = productById.ProductName,
+                    Quantity = productById.Quantity
+                };
+
+                return newProductModel;
+            }
+        }
+
+        public HttpResponseMessage PostProductByAdmin(
+            [ValueProvider(typeof(HeaderValueProviderFactory<string>))] string sessionKey, ProductFullModel product)
+        {
+            var responseMsg = this.PerformOperationAndHandleExceptions(
+                () =>
+                {
+                    var context = new StoreContext();
+                    using (context)
+                    {
+                        var user = UsersController.GetUserBySessionKey(sessionKey);
+                        if (user == null)
+                        {
+                            throw new ArgumentException("There is no user with such sessionKey!");
+                        }
+
+                        if (!CheckUserIsAdmin(user.UserId))
+                        {
+                            throw new ArgumentException("You are not admin");
+                        }
+
+                        var cat = context.Categories.Where(c => c.CategoryName == product.Category).FirstOrDefault();
+                        var newCategory = new Category();
+                        if (cat == null)
+                        {
+                            newCategory.CategoryName = product.ProductName;
+                        }
+
+                        var newProduct =
+                            new Product()
+                            {
+                                ProductId = product.ProductId,
+                                Price = product.Price,
+                                Category = newCategory,
+                                DateOfCreation = product.DateOfCreation,
+                                Description = product.Description,
+                                Manufacturer = product.Manufacturer,
+                                ProductName = product.ProductName,
+                                Quantity = product.Quantity
+
+                            };
+
+                        context.Products.Add(newProduct);
+                        context.SaveChanges();
+
+                        var response =
+                              this.Request.CreateResponse(HttpStatusCode.OK);
+
+                        return response;
+                    }
+                });
+            return responseMsg;
+        }
+
+        public HttpResponseMessage PutProductByAdmin(
+            [ValueProvider(typeof(HeaderValueProviderFactory<string>))] string sessionKey, ProductFullModel product)
+        {
+            var responseMsg = this.PerformOperationAndHandleExceptions(
+                () =>
+                {
+                    var context = new StoreContext();
+                    using (context)
+                    {
+                        var user = UsersController.GetUserBySessionKey(sessionKey);
+                        if (user == null)
+                        {
+                            throw new ArgumentException("There is no user with such sessionKey!");
+                        }
+
+                        if (!CheckUserIsAdmin(user.UserId))
+                        {
+                            throw new ArgumentException("You are not admin");
+                        }
+
+                        var productToUpdate = context.Products.FirstOrDefault(p => p.ProductId == product.ProductId);
+
+                        productToUpdate.DateOfCreation = product.DateOfCreation;
+                        productToUpdate.Description = product.Description;
+                        productToUpdate.Manufacturer = product.Manufacturer;
+                        productToUpdate.Price = product.Price;
+                        productToUpdate.Quantity = product.Quantity;
+                        productToUpdate.ProductName = product.ProductName;
+
+                        context.SaveChanges();
+
+                        var productModel = new ProductFullModel()
+                        {
+                            ProductId = productToUpdate.ProductId,
+                            ProductName = productToUpdate.ProductName,
+                            Price = productToUpdate.Price,
+                            Category = productToUpdate.Category.CategoryName,
+                            DateOfCreation = productToUpdate.DateOfCreation,
+                            Description = productToUpdate.Description,
+                            Manufacturer = productToUpdate.Manufacturer,
+                            Quantity = productToUpdate.Quantity
+                        };
+
+                        var response =
+                              this.Request.CreateResponse(HttpStatusCode.OK, productModel);
+
+                        return response;
+                    }
+                });
+            return responseMsg;
+        }
+
+        public HttpResponseMessage DeleteProductByAdmin(
+            [ValueProvider(typeof(HeaderValueProviderFactory<string>))] string sessionKey, int id)
+        {
+
+            var responseMsg = this.PerformOperationAndHandleExceptions(
+            () =>
+            {
+                var context = new StoreContext();
+                using (context)
+                {
+                    var product = context.Products.FirstOrDefault(p => p.ProductId == id);
+                    if (product == null)
+                    {
+                        throw new ArgumentNullException("No product found");
+                    }
+
+                    context.Products.Remove(product);
+                    context.SaveChanges();
+
+                    var response =
+                      this.Request.CreateResponse(HttpStatusCode.OK);
+
+                    return response;
+                }
+            });
+            return responseMsg;
+        }
+        public HttpResponseMessage PutProduct(
+            [ValueProvider(typeof(HeaderValueProviderFactory<string>))] string sessionKey, int id)
+        {
+            var responseMsg = this.PerformOperationAndHandleExceptions(
+                () =>
+                {
+                    var context = new StoreContext();
+                    using (context)
+                    {
+                        var user = context.Users.Where(usr => usr.SessionKey == sessionKey).FirstOrDefault();
+                        if (user == null)
+                        {
+                            throw new ArgumentException("There is no user with such sessionKey!");
+                        }
+
+                        var productToUpdate = context.Products.FirstOrDefault(p => p.ProductId == id);
+
+                        productToUpdate.Quantity--;
+
+                        user.Products.Add(productToUpdate);
+
+                        context.SaveChanges();
+
+                        var productModel = new ProductFullModel()
+                        {
+                            ProductId = productToUpdate.ProductId,
+                            ProductName = productToUpdate.ProductName,
+                            Price = productToUpdate.Price,
+                            Category = productToUpdate.Category.CategoryName,
+                            DateOfCreation = productToUpdate.DateOfCreation,
+                            Description = productToUpdate.Description,
+                            Manufacturer = productToUpdate.Manufacturer,
+                            Quantity = productToUpdate.Quantity
+                        };
+
+                        var response =
+                              this.Request.CreateResponse(HttpStatusCode.OK, productModel);
+
+                        return response;
+                    }
+                });
+            return responseMsg;
+        }
+
+        private bool CheckUserIsAdmin(int id)
+        {
+            var context = new StoreContext();
+            using (context)
+            {
+                var user = context.Users.FirstOrDefault(u => u.UserId == id && u.Role == "admin");
+
+                if (user == null)
+                {
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,12 @@
+D:\Bobby\Edu\1TERELIK\C#sep\OOPI\AliensKiller\AliensKiller\bin\Debug\AliensKiller.exe.config
+D:\Bobby\Edu\1TERELIK\C#sep\OOPI\AliensKiller\AliensKiller\bin\Debug\AliensKiller.exe
+D:\Bobby\Edu\1TERELIK\C#sep\OOPI\AliensKiller\AliensKiller\bin\Debug\AliensKiller.pdb
+D:\Bobby\Edu\1TERELIK\C#sep\OOPI\AliensKiller\AliensKiller\obj\Debug\AliensKiller.csprojResolveAssemblyReference.cache
+D:\Bobby\Edu\1TERELIK\C#sep\OOPI\AliensKiller\AliensKiller\obj\Debug\AliensKiller.exe
+D:\Bobby\Edu\1TERELIK\C#sep\OOPI\AliensKiller\AliensKiller\obj\Debug\AliensKiller.pdb
+D:\Telerik\Teamworks\Team_Garfield\AliensKiller\AliensKiller\bin\Debug\AliensKiller.exe.config
+D:\Telerik\Teamworks\Team_Garfield\AliensKiller\AliensKiller\obj\Debug\AliensKiller.exe
+D:\Telerik\Teamworks\Team_Garfield\AliensKiller\AliensKiller\obj\Debug\AliensKiller.pdb
+D:\Telerik\Teamworks\Team_Garfield\AliensKiller\AliensKiller\bin\Debug\AliensKiller.exe
+D:\Telerik\Teamworks\Team_Garfield\AliensKiller\AliensKiller\bin\Debug\AliensKiller.pdb
+D:\Telerik\Teamworks\Team_Garfield\AliensKiller\AliensKiller\obj\Debug\AliensKiller.csprojResolveAssemblyReference.cache

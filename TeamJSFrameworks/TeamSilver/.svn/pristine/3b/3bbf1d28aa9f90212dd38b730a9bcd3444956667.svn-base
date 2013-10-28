@@ -1,0 +1,82 @@
+﻿/// <reference path="../libs/_references.js" />
+
+window.vmFactory = (function () {
+	var data = null;
+
+	function getLoginViewModel(successCallback) {		
+		var viewModel = {
+			username: $("#tb-username").val(),
+			password: $("#tb-password").val(),
+			usernameReg: $("#tb-usernameReg").val(),
+			passwordReg: $("#tb-passwordReg").val(),
+			firstName: $("#tb-firstName").val(),
+			lastName: $("#tb-lastName").val(),
+			email: $("#tb-email").val(),
+			login: function () {
+				data.users.login(this.get("username"), this.get("password"))
+					.then(function () {
+					    if (successCallback) {
+							successCallback();
+						}
+					});
+			},
+			register: function () {
+			    data.users.register(this.get("usernameReg"), this.get("passwordReg"), this.get("firstName"), this.get("lastName"),
+                    this.get("email"))
+					.then(function () {
+						if (successCallback) {
+							successCallback();
+						}
+					});
+			}
+		};
+		return kendo.observable(viewModel);
+	};
+
+	function getProductsViewModel() {
+		return data.products.all()
+			.then(function (products) {
+			    console.log(products);
+				var viewModel = {
+					products: products,
+					message: ""
+				};
+				console.log(viewModel);
+				return kendo.observable(viewModel);
+			}, function (err) {
+			    console.log(err);
+			});
+	}
+
+	function getProductsByIdViewModel(id) {
+	    return data.products.getById(id)
+			.then(function (products) {
+			    console.log(products);
+			    var viewModel = {
+			        products: products,
+			        message: ""
+			    };
+			    console.log(viewModel);
+			    return kendo.observable(viewModel);
+			}, function (err) {
+			    console.log(err);
+			});
+	}
+
+	function getNicknameViewModel() {
+	    var viewModel ={
+	        nickname: data.getNickname()
+	    }
+	    return kendo.observable(viewModel);
+	}
+
+	return {
+		getLoginVM: getLoginViewModel,
+		getProductsVM: getProductsViewModel,
+	    getProductsByIdVM: getProductsByIdViewModel,
+        getNicknameVM: getNicknameViewModel,
+		setPersister: function (persister) {
+			data = persister
+		}
+	};
+}());

@@ -1,0 +1,15 @@
+﻿
+<div>
+    <ul>
+       <li ng-repeat="user in users">
+           <ul>
+               <li>First name: {{user.firstName}}</li>
+               <li>Last name: {{user.lastName}}</li>
+               <li>Username: {{user.username}}</li>
+               <li>E-mail: {{user.email}}</li>
+               <li>Role: {{user.role}}</li>
+               <a href="/users/changeRole/{{user.userId}}">Change role</a>
+           </ul>
+       </li> 
+    </ul>
+</div>

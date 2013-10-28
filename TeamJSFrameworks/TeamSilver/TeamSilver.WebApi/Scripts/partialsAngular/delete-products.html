@@ -1,0 +1,10 @@
+﻿<div>
+    <ul>
+       <li ng-repeat="product in products">
+           <ul>
+               <li>Product name: {{product.productName}}</li>
+               <a href="#/products/delete/{{product.productId}}">Delete product</a>
+           </ul>
+       </li> 
+    </ul>
+</div>

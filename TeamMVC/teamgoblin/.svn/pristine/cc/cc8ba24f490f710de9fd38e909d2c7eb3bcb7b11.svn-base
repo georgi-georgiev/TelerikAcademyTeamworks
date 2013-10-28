@@ -1,0 +1,51 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using Microsoft.AspNet.SignalR;
+using GoblinFreelancer.Repository;
+using GoblinFreelancer.Models;
+using System.Data.Entity;
+
+namespace GoblinFreelancer.Hubs
+{
+    public class Chat : Hub
+    {
+        //public Chat()
+        //{
+        //    Groups.Add(Context.ConnectionId, room);
+        //}
+
+        public Chat()
+        {
+            this.UnitOfWork = new UowData();
+        }
+        private UowData UnitOfWork { get; set; }
+        public void SendMessage(string message, int projectId, string senderId)
+        {
+            Groups.Add(Context.ConnectionId, projectId.ToString());
+
+            var msg = string.Format("{0}: {1}", Context.ConnectionId, message);
+            var user = this.UnitOfWork.Users.All().FirstOrDefault(u => u.Id == senderId);
+            Message dbMessage = new Message
+            {
+                DateSend = DateTime.Now,
+                Body = message,
+                Project = this.UnitOfWork.Projects.GetById(projectId),
+                Sender = user
+            };
+            this.UnitOfWork.Messages.Add(dbMessage);
+            this.UnitOfWork.SaveChanges();
+
+            Clients.Group(projectId.ToString()).addMessage(msg);
+        }
+
+        public void LoadOldMessages(int projectId)
+        {
+            var messages = this.UnitOfWork
+                .Messages
+                .All()
+                .Where(msg => msg.Project.Id == projectId);
+        }
+    }
+}

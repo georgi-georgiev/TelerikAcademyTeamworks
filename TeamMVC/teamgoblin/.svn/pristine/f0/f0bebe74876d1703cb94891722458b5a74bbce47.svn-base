@@ -1,0 +1,70 @@
+﻿using GoblinFreelancer.Repository;
+using GoblinFreelancer.ViewModels;
+using Kendo.Mvc.UI;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.Mvc;
+using Kendo.Mvc.Extensions;
+using GoblinFreelancer.Models;
+
+namespace GoblinFreelancer.Controllers
+{
+    public class ProjectsController : Controller
+    {
+        IUowData db;
+
+        public ProjectsController(IUowData db)
+        {
+            this.db = db;
+        }
+
+        public ProjectsController()
+        {
+            db = new UowData();
+        }
+        //
+        // GET: /Projects/
+        public ActionResult Index()
+        {
+            return View();
+        }
+
+        public JsonResult ReadProjects([DataSourceRequest]DataSourceRequest request)
+        {
+            var projects = db.Projects.All().ToList().Select(ProjectViewModelFull.FromProject);
+            return Json(projects.ToDataSourceResult(request), JsonRequestBehavior.AllowGet);
+        }
+
+        public JsonResult ReadProjectsCategory([DataSourceRequest]DataSourceRequest request, string category)
+        {
+            var projects = db.Projects.All().Where(p => p.Category.Name == category).ToList().Select(ProjectViewModelFull.FromProject);
+            return Json(projects.ToDataSourceResult(request), JsonRequestBehavior.AllowGet);
+        }
+
+        public ActionResult ReadProjectsSearch([DataSourceRequest]DataSourceRequest request, string query)
+        {
+            if(query.Length >= 50)
+            {
+                return View("Error");
+            }
+            if (String.IsNullOrEmpty(query))
+            {
+                var projects = db.Projects.All().ToList().Select(ProjectViewModelFull.FromProject);
+                return Json(projects.ToDataSourceResult(request), JsonRequestBehavior.AllowGet);
+            }
+            else
+            {
+                var projects = db.Projects.All().Where(p => p.Name.Contains(query)).ToList().Select(ProjectViewModelFull.FromProject);
+                return Json(projects.ToDataSourceResult(request), JsonRequestBehavior.AllowGet);
+            }
+        }
+
+        public ActionResult Search(string query)
+        {
+            ViewBag.Query = query;
+            return View();
+        }
+	}
+}

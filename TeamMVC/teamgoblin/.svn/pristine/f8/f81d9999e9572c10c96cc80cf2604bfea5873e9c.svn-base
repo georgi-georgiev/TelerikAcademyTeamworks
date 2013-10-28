@@ -1,0 +1,59 @@
+﻿using GoblinFreelancer.Models;
+using GoblinFreelancer.Models.ViewModels;
+using GoblinFreelancer.Repository;
+using Kendo.Mvc.UI;
+using Kendo.Mvc.Extensions;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.Mvc;
+using System.Data.Entity;
+
+namespace GoblinFreelancer.Controllers
+{
+    public class UsersController : Controller
+    {
+        public UsersController()
+        {
+            this.UnitOfWork = new UowData();
+        }
+
+        private UowData UnitOfWork { get; set; }
+
+        //
+        // GET: /Users/
+        public ActionResult Index()
+        {
+            return View();
+        }
+
+        public ActionResult ByUser(string username)
+        {
+            if(string.IsNullOrEmpty(username))
+            {
+                return View("Error");
+            }
+            ApplicationDbContext context = new ApplicationDbContext();
+            var user = context.Users.FirstOrDefault(u => u.UserName == username);
+            if(user == null)
+            {
+                return View("Error");
+            }
+            return View(user);
+        }
+
+        public JsonResult GetUsers([DataSourceRequest]DataSourceRequest request)
+        {
+            var result = this.UnitOfWork
+                .Users
+                .All()
+                .OrderBy(user => user.Rating)
+                .ThenBy(user => user.UserName)
+                .ToList()
+                .Select(UserViewModel.FromUser);
+
+            return Json(result.ToDataSourceResult(request), JsonRequestBehavior.AllowGet);
+        }
+	}
+}

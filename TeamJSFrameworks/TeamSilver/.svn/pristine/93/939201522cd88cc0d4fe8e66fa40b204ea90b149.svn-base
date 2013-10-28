@@ -1,0 +1,11 @@
+﻿.menu li{
+    display: inline-block;
+}
+.menu li a{
+    display: block;
+    background: #3355f1;
+    border-radius: 5px;
+    padding: 10px 20px;
+    color: #0102f0;
+    text-decoration: none;
+}

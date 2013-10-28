@@ -1,0 +1,36 @@
+﻿@using GoblinFreelancer.ViewModels;
+@model IEnumerable<ProjectViewModelFull>
+@{
+    ViewBag.Title = "Projects";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<p>Search <input type="text" /><input type="submit" value="Search" /></p>
+
+@if(Model.Count() != 0)
+{@:
+    @(Html.Kendo()
+        .Grid<ProjectViewModelFull>()
+        .Name("Projects")
+        .Columns(columns =>
+            {
+                //columns.Bound(model => model.Salary).ClientTemplate("<p>dasds<p>" + Html.Raw("<p>dasdsa<p>"));
+                columns.AutoGenerate(true);
+            })
+            .Pageable()
+            .Sortable()
+            .BindTo(Model)
+            @*.DataSource(dataSource => dataSource
+                .Ajax()
+                .Model(model => model.Id(b => b.Id))
+                .PageSize(5)
+                .ServerOperation(true)
+                .Read("GetProjects", "Categories")
+                )*@
+    );
+
+}
+else {
+    <h3>No projects in this category.</h3>
+}

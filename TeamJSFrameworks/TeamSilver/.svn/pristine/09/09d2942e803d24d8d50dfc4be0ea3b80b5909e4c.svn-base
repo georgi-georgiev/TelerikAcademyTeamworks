@@ -1,0 +1,10 @@
+﻿<ul data-template="ul-template" data-bind="source: products">
+</ul>
+<script id="ul-template" type="text/x-kendo-template">
+    <li>
+        <a href="\#/products/#=productId#">
+            id: <span id="productId" data-bind="text: productId"></span>
+            name: <span id="productName" data-bind="text: productName"></span>
+        </a>
+    </li>
+</script>

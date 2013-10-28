@@ -1,0 +1,5 @@
+C:\Users\Georgi\Documents\Visual Studio 2012\Projects\TeamSilver\TeamSilver\bin\TeamSilver.dll
+C:\Users\Georgi\Documents\Visual Studio 2012\Projects\TeamSilver\TeamSilver\bin\TeamSilver.pdb
+C:\Users\Georgi\Documents\Visual Studio 2012\Projects\TeamSilver\TeamSilver\obj\Debug\TeamSilver.csprojResolveAssemblyReference.cache
+C:\Users\Georgi\Documents\Visual Studio 2012\Projects\TeamSilver\TeamSilver\obj\Debug\TeamSilver.dll
+C:\Users\Georgi\Documents\Visual Studio 2012\Projects\TeamSilver\TeamSilver\obj\Debug\TeamSilver.pdb

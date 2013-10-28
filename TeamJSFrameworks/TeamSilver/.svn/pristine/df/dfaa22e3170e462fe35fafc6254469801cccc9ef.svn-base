@@ -1,0 +1,13 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace TeamSilver.WebApi.Models
+{
+    public class ProductModel
+    {
+        public int ProductId { get; set; }
+        public string ProductsName { get; set; }
+    }
+}

@@ -1,0 +1,52 @@
+﻿<fieldset>
+    <legend>Login</legend>
+    <div id="lodin-form-content" class="k-content">
+        <div>
+            <ul class="forms">
+                <li>
+                    <label for="tb-username">Username</label>
+                    <input data-bind="value: username" class="k-textbox" type="text" id="tb-username" />
+                </li>
+                <li>
+                    <label for="tb-password">Password</label>
+                    <input data-bind="value: password" class="k-textbox" type="password" id="tb-password" />
+                </li>
+                <li>
+                    <button data-bind="click: login" class="k-button">Login</button>
+                </li>
+            </ul>
+        </div>
+    </div>
+</fieldset>
+<fieldset>
+    <legend>Register</legend>
+    <div id="register-form-content" class="k-content">
+        <div>
+            <ul class="forms">
+                <li>
+                    <label for="tb-usernameReg">Username</label>
+                    <input data-bind="value: usernameReg" class="k-textbox" type="text" id="tb-usernameReg" />
+                </li>
+                <li>
+                    <label for="tb-passwordReg">Password</label>
+                    <input data-bind="value: passwordReg" class="k-textbox" type="password" id="tb-passwordReg" />
+                </li>
+                <li>
+                    <label for="tb-firstName">First Name</label>
+                    <input data-bind="value: firstName" class="k-textbox" type="text" id="tb-firstName" />
+                </li>
+                <li>
+                    <label for="tb-lastName">Last Name</label>
+                    <input data-bind="value: lastName" class="k-textbox" type="text" id="tb-lastName" />
+                </li>
+                <li>
+                    <label for="tb-email">Email</label>
+                    <input data-bind="value: email" class="k-textbox" type="text" id="tb-email" />
+                </li>
+                <li>
+                    <button data-bind="click: register" class="k-button">Register</button>
+                </li>
+            </ul>
+        </div>
+    </div>
+</fieldset>
